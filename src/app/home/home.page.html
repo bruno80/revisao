@@ -7,8 +7,23 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-slides>
+    <ion-slide *ngFor="let perfil of perfis">
+      <ion-card>
+        <img src="{{perfil.avatar}}" alt="Avatar">
+        <ion-card-header>
+          <ion-card-title>{{perfil.nome}}</ion-card-title>
+          <ion-card-subtitle>{{perfil.idade}} Anos</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="heart" slot="start"></ion-icon>
+            <ion-badge slot="end">{{perfil.likes}}</ion-badge>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
